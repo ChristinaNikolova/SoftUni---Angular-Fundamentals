@@ -67,13 +67,13 @@ class Manager extends Employee {
     }
 }
 
-var junior: Junior = new Junior("Misho", 3);
+var junior: Junior = new Junior('Misho', 3);
 console.log(junior);
 junior.work();
 junior.salary = 200;
 junior.collectSalary();
 
-var senior: Senior = new Senior("Plamen", 20);
+var senior: Senior = new Senior('Plamen', 20);
 senior.work();
 senior.work();
 senior.work();
@@ -81,7 +81,7 @@ senior.work();
 senior.work();
 senior.work();
 
-var manager: Manager = new Manager("Hrisi", 20);
+var manager: Manager = new Manager('Hrisi', 20);
 manager.work();
 manager.work();
 manager.work();

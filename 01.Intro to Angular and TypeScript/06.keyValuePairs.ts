@@ -13,5 +13,5 @@ class KeyValuePair < T, U > {
 }
 
 let kvp: KeyValuePair< number, string > = new KeyValuePair < number, string > ();
-kvp.setKeyValue(1, "Steve");
+kvp.setKeyValue(1, 'Steve');
 kvp.display();

@@ -25,8 +25,8 @@ box.add(3);
 console.log(box.count);
 
 let box1: Box < String > = new Box < String > ();
-box1.add("Pesho");
-box1.add("Gosho");
+box1.add('Pesho');
+box1.add('Gosho');
 console.log(box1.count);
 box1.remove();
 console.log(box1.count);

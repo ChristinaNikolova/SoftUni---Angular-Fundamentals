@@ -29,7 +29,7 @@ class Firemelon extends Melon {
         weight: number,
         melonSort: string) {
         super(weight, melonSort);
-        this.element = "Fire";
+        this.element = 'Fire';
     }
 }
 
@@ -38,7 +38,7 @@ class Earthmelon extends Melon {
         weight: number,
         melonSort: string) {
         super(weight, melonSort);
-        this.element = "Earth";
+        this.element = 'Earth';
     }
 }
 
@@ -47,7 +47,7 @@ class Airmelon extends Melon {
         weight: number,
         melonSort: string) {
         super(weight, melonSort);
-        this.element = "Air";
+        this.element = 'Air';
     }
 }
 
@@ -56,7 +56,7 @@ class Watermelon extends Melon {
         weight: number,
         melonSort: string) {
         super(weight, melonSort);
-        this.element = "Water";
+        this.element = 'Water';
     }
 }
 
@@ -67,8 +67,8 @@ class Melolemonmelon extends Watermelon {
         weight: number,
         melonSort: string) {
         super(weight, melonSort);
-        this.element = "Water";
-        this.elements = ["Fire", "Earth", "Air", "Water"];
+        this.element = 'Water';
+        this.elements = ['Fire', 'Earth', 'Air', 'Water'];
     }
 
     public morph(): void {
@@ -78,10 +78,10 @@ class Melolemonmelon extends Watermelon {
     }
 }
 
-let watermelon: Watermelon = new Watermelon(12.5, "Kingsize");
+let watermelon: Watermelon = new Watermelon(12.5, 'Kingsize');
 console.log(watermelon.toString());
 
-let melolemonmelon: Melolemonmelon = new Melolemonmelon(12.5, "Kingsize");
+let melolemonmelon: Melolemonmelon = new Melolemonmelon(12.5, 'Kingsize');
 melolemonmelon.morph();
 console.log(melolemonmelon.element);
 melolemonmelon.morph();

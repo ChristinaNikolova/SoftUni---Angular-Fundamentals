@@ -28,15 +28,15 @@ function solve(input: Array < string > , criteria: string) {
         tickets.push(ticket);
     }
 
-    if (criteria === "destination") {
+    if (criteria === 'destination') {
         tickets.sort((a, b) => {
             return a.destination.localeCompare(b.destination)
         });
-    } else if (criteria === "price") {
+    } else if (criteria === 'price') {
         tickets.sort((a, b) => {
             return a.price - b.price
         });
-    } else if (criteria === "status") {
+    } else if (criteria === 'status') {
         tickets.sort((a, b) => {
             return a.status.localeCompare(b.status)
         });

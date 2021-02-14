@@ -10,5 +10,5 @@ class User {
     }
 }
 
-const user: User = new User("Misheto");
+const user: User = new User('Misheto');
 console.log(user.sayHello());
