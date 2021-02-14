@@ -3,9 +3,9 @@ var User = /** @class */ (function () {
         this.name = name;
     }
     User.prototype.sayHello = function () {
-        return this.name + " says hi!";
+        return this.name + ' says hi!';
     };
     return User;
 }());
-var user = new User("Misheto");
+var user = new User('Misheto');
 console.log(user.sayHello());
