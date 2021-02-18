@@ -1,0 +1,30 @@
+<h1>Popular Movies</h1>
+<div class="row">
+    <div class="col-lg-2" *ngFor = 'let movie of popularMovies'>
+        <app-movie [movie] = movie></app-movie>
+    </div>
+</div>
+
+<h1>Upcomimg Movies</h1>
+<div class="row">
+    <div class="col-lg-2" *ngFor = 'let movie of upcomingMovies'>
+        <app-movie [movie] = movie></app-movie>
+    </div>
+</div>
+
+<h1>Top Rated Movies</h1>
+<div class="row">
+    <div class="col-lg-2" *ngFor = 'let movie of topRatedMovies'>
+        <app-movie [movie] = movie></app-movie>
+    </div>
+</div>
+
+
+<h1>Now Playing Movies</h1>
+<div class="row">
+    <div class="col-lg-2" *ngFor = 'let movie of nowPlayingMovies'>
+        <app-movie [movie] = movie></app-movie>
+    </div>
+</div>
+
+

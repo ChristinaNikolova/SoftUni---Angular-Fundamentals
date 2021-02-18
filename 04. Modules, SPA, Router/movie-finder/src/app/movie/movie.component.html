@@ -1,0 +1,10 @@
+<div class="card mb-3">
+  <img src="{{imagePath}}" alt="movie-poster">
+  <div class="card-body">
+    <p class="card-text">{{movie.title}}</p>
+  </div>
+  <div class="card-body">{{movie.release_date}}</div>
+  <div class="card-footer text-muted">
+    <button class="btn btn-secondary" [routerLink]="['/movies', movie.id]">View Details</button>
+  </div>
+</div>
