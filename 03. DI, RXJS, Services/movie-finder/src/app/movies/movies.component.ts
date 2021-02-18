@@ -27,6 +27,6 @@ export class MoviesComponent implements OnInit {
 
     this.moviesService.getUpcomingMovies().subscribe((data) => {
       this.upcomingMovies = data;
-    })
+    });
   }
 }

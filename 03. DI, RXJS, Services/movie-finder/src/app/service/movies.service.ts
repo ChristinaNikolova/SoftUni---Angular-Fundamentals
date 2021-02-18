@@ -30,6 +30,6 @@ export class MoviesService {
     .get < Array < IMovie >> (BASE_URL + UPCOMING_MOVIES + API_KEY)
     .pipe(
       map((data) => data['results'].slice(0, 6))
-    )
+    );
   }
 }
