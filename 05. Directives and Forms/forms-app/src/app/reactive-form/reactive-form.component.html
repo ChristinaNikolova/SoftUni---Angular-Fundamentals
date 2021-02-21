@@ -1,0 +1,77 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4">
+      <h1>Registration Form</h1>
+      <form [formGroup]="form" (submit)="register()">
+        <pre>{{ form.value | json }}</pre>
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+          </div>
+          <input class="form-control" placeholder="Full Name" type="text" formControlName="fullName">
+        </div>
+        <div class="alert alert-danger" *ngIf="f.fullName?.errors?.required && f.fullName?.touched">The name is required</div>
+        <div class="alert alert-danger" *ngIf="f.fullName?.errors?.pattern">The name should be in format Example Example</div>
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+          </div>
+          <input class="form-control" placeholder="Email Address" type="email" formControlName="email">
+        </div>
+        <div class="alert alert-danger" *ngIf="f.email?.errors?.required && f.email?.touched">The email is required</div>
+        <div class="alert alert-danger" *ngIf="f.email?.errors?.email">The email should be in format example@example.com</div>
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+          </div>
+          <select class="custom-select" style="max-width: 120px;">
+            <option value="{{phoneCode}}" *ngFor="let phoneCode of phoneCodes">{{phoneCode}}</option>
+          </select>
+          <input class="form-control" placeholder="Phone number" type="text" formControlName="phone">
+        </div>
+        <div class="alert alert-danger" *ngIf="f.phone?.errors?.required && f.phone?.touched">The phone is required</div>
+        <div class="alert alert-danger" *ngIf="f.phone?.errors?.pattern">The phone should contains 9 characters</div>
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-building"></i> </span>
+          </div>
+          <select class="form-control" formControlName="job">
+            <option disabled selected="selected">Please select one of the options below</option>
+            <option value="{{job}}" *ngFor="let job of jobs">{{job}}</option>
+          </select>
+        </div>
+        <div class="alert alert-danger" *ngIf="f.job?.errors?.required && f.job?.touched">The job is required</div>
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+          </div>
+          <input class="form-control" placeholder="Create password" type="password" formControlName="password">
+        </div>
+        <div class="alert alert-danger" *ngIf="f.password?.errors?.required && f.password?.touched">The password is required</div>
+              <div class="alert alert-danger" *ngIf="f.password?.errors?.pattern">The password should contains only digits and letters and should be between 3 and 16 characters</div>
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+          </div>
+          <input class="form-control" placeholder="Repeat password" type="password" formControlName="repeatPassword">
+        </div>
+        <div class="alert alert-danger" *ngIf="f.repeatPassword?.errors?.required && f.repeatPassword?.touched">The repeat password is required</div>
+        <div class="alert alert-danger" *ngIf="f.password?.value != f.repeatPassword?.value">Passwords should match</div>
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-image"></i> </span>
+          </div>
+          <input class="form-control" placeholder="Image Url" type="url" formControlName="url">
+        </div>
+        <div class="alert alert-danger" *ngIf="f.url?.errors?.required && f.url?.touched">The url is required</div>
+        <div class="alert alert-danger" *ngIf="f.url?.touched && !(f.url?.value.startsWith('http') && (f.url?.value.endsWith('png') || f.url?.value.endsWith('jpg')))">The url should start with http or https and should ends with .png or .jpg</div>
+        <div class="form-group">
+          <button [disabled]="form.invalid" type="submit" class="btn btn-primary btn-block"> Create Account </button>
+        </div>
+        <p class="text-center">Have an account? <a href="">Log In</a> </p>
+      </form>
+    </div>
+    <div class="col-lg-4"></div>
+  </div>
+</div>
