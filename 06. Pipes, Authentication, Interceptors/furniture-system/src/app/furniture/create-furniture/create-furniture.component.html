@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="row space-top">
+    <div class="col-md-12">
+      <h1>Create New Furniture</h1>
+      <p>Please fill all fields.</p>
+    </div>
+  </div>
+  <form [formGroup]="form" (submit)="create()">
+    <div class="row space-top">
+      <div class="col-md-4">
+        <div class="form-group">
+          <label class="form-control-label" for="new-make">Make</label>
+          <input class="form-control" id="new-make" type="text" formControlName="make">
+        </div>
+        <div class="alert alert-danger" *ngIf="f.make?.errors?.required && f.make?.touched">The field is required</div>
+        <div class="alert alert-danger" *ngIf="f.make?.errors?.minlength">The make should be at least {{f.make?.errors?.minlength.requiredLength}} characters</div>
+        <div class="form-group has-success">
+          <label class="form-control-label" for="new-model">Model</label>
+          <input class="form-control is-valid" id="new-model" type="text" formControlName="model">
+        </div>
+        <div class="alert alert-danger" *ngIf="f.model?.errors?.required && f.model?.touched">The field is required</div>
+        <div class="alert alert-danger" *ngIf="f.model?.errors?.minlength">The model should be at least {{f.model?.errors?.minlength.requiredLength}} characters</div>
+        <div class="form-group has-danger">
+          <label class="form-control-label" for="new-year">Year</label>
+          <input class="form-control is-invalid" id="new-year" type="number" formControlName="year">
+        </div>
+        <div class="alert alert-danger" *ngIf="f.year?.errors?.required && f.year?.touched">The field is required</div>
+        <div class="alert alert-danger" *ngIf="f.year?.errors?.min">The year should be after {{f.year?.errors?.min.min}} year</div>
+        <div class="alert alert-danger" *ngIf="f.year?.errors?.max">The year should be before {{f.year?.errors?.max.max}} year</div>
+        <div class="form-group">
+          <label class="form-control-label" for="new-description">Description</label>
+          <input class="form-control" id="new-description" type="text" formControlName="description">
+        </div>
+        <div class="alert alert-danger" *ngIf="f.description?.errors?.required && f.description?.touched">The field is required</div>
+        <div class="alert alert-danger" *ngIf="f.description?.errors?.minlength">The description should be at least {{f.description?.errors?.minlength.requiredLength}} characters</div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label class="form-control-label" for="new-price">Price</label>
+          <input class="form-control" id="new-price" type="number" formControlName="price">
+        </div>
+        <div class="alert alert-danger" *ngIf="f.price?.errors?.required && f.price?.touched">The field is required</div>
+        <div class="alert alert-danger" *ngIf="f.price?.errors?.min">The price should be at least {{f.price?.errors?.min.min}}</div>
+        <div class="form-group">
+          <label class="form-control-label" for="new-image">Image</label>
+          <input class="form-control" id="new-image" type="text" formControlName="image">
+        </div>
+        <div class="alert alert-danger" *ngIf="f.image?.errors?.required && f.image?.touched">The field is required</div>
+        <div class="form-group">
+          <label class="form-control-label" for="new-material">Material (optional)</label>
+          <input class="form-control" id="new-material" type="text" formControlName="material">
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Create</button>
+      </div>
+    </div>
+  </form>
+</div>
